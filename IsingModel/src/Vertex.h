@@ -5,6 +5,8 @@
  *      Author: Robin
  */
 
+//Spin takes values in the set {-1,1}
+
 #ifndef VERTEX_H_
 #define VERTEX_H_
 
@@ -14,8 +16,8 @@ public:
 	virtual ~Vertex();
 	Vertex(const Vertex &other);
 	Vertex& operator=(const Vertex &other);
-	bool isSpin() const;
-	void setSpin(bool spin);
+	int getSpin() const;
+	void setSpin(int spin);
 	int getX() const;
 	void setX(int x);
 	int getY() const;
@@ -24,7 +26,7 @@ public:
 private:
 	int x;
 	int y;
-	bool spin;
+	int spin;
 };
 
 #endif /* VERTEX_H_ */

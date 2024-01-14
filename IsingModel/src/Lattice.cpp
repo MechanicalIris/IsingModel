@@ -22,7 +22,33 @@ Lattice::Lattice(unsigned int xDim, unsigned int yDim, bool spin):
 	}
 }
 
-Lattice::~Lattice() {
-	// TODO Auto-generated destructor stub
+Lattice::~Lattice()
+{
+
+	for(unsigned int i = 0; i < this->xDim; i++)
+		delete[] grid[i];
+	delete[] grid;
+}
+
+
+unsigned int Lattice::getXDim() const {
+	return xDim;
+}
+
+void Lattice::setXDim(unsigned int xDim) {
+	this->xDim = xDim;
+}
+
+unsigned int Lattice::getYDim() const {
+	return yDim;
+}
+
+void Lattice::setYDim(unsigned int yDim) {
+	this->yDim = yDim;
+}
+
+const Vertex& Lattice::getVertex(unsigned int x, unsigned int y)
+{
+	return grid[x][y];
 }
 

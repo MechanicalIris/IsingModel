@@ -10,7 +10,7 @@
 Vertex::Vertex() :
 x(0),
 y(0),
-spin(false)
+spin(0)
 {
 }
 
@@ -23,22 +23,22 @@ Vertex::Vertex(const Vertex &other)
 {
 	this->x = other.getX();
 	this->y = other.getY();
-	this->spin = other.isSpin();
+	this->spin = other.getSpin();
 }
 
 Vertex& Vertex::operator=(const Vertex &other) 
 {
 	this->x = other.getX();
 	this->y = other.getY();
-	this->spin = other.isSpin();
+	this->spin = other.getSpin();
 }
 
 
-bool Vertex::isSpin() const {
+int Vertex::getSpin() const {
 return spin;
 }
 
-void Vertex::setSpin(bool spin) {
+void Vertex::setSpin(int spin) {
 this->spin = spin;
 }
 
